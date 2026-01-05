@@ -1,0 +1,171 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
+
+@theme {
+  --color-primary: #D8252F;
+  --color-primary-dark: #B81E27;
+  --color-primary-light: #E54A52;
+  --color-secondary: #2B3B7C;
+  --color-secondary-dark: #1E2A5A;
+  --color-secondary-light: #3D4F9A;
+  --font-family-arabic: 'Cairo', sans-serif;
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  text-align: right;
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary-dark);
+}
+
+.btn-outline {
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.section-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.container-custom {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom color utilities */
+.bg-primary { background-color: var(--color-primary); }
+.bg-primary-dark { background-color: var(--color-primary-dark); }
+.bg-primary-light { background-color: var(--color-primary-light); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-secondary-dark { background-color: var(--color-secondary-dark); }
+.bg-secondary-light { background-color: var(--color-secondary-light); }
+
+.text-primary { color: var(--color-primary); }
+.text-primary-dark { color: var(--color-primary-dark); }
+.text-primary-light { color: var(--color-primary-light); }
+.text-secondary { color: var(--color-secondary); }
+.text-secondary-dark { color: var(--color-secondary-dark); }
+.text-secondary-light { color: var(--color-secondary-light); }
+
+.border-primary { border-color: var(--color-primary); }
+.border-secondary { border-color: var(--color-secondary); }
+
+.hover\:bg-primary:hover { background-color: var(--color-primary); }
+.hover\:bg-primary-dark:hover { background-color: var(--color-primary-dark); }
+.hover\:bg-secondary:hover { background-color: var(--color-secondary); }
+.hover\:bg-secondary-dark:hover { background-color: var(--color-secondary-dark); }
+
+.hover\:text-primary:hover { color: var(--color-primary); }
+.hover\:text-primary-light:hover { color: var(--color-primary-light); }
+
+.ring-primary\/50 { --tw-ring-color: rgba(216, 37, 47, 0.5); }
+.focus\:ring-primary\/50:focus { --tw-ring-color: rgba(216, 37, 47, 0.5); }
+
+.bg-primary\/10 { background-color: rgba(216, 37, 47, 0.1); }
+.bg-primary\/30 { background-color: rgba(216, 37, 47, 0.3); }
+.bg-white\/10 { background-color: rgba(255, 255, 255, 0.1); }
+.bg-white\/20 { background-color: rgba(255, 255, 255, 0.2); }
+.border-white\/20 { border-color: rgba(255, 255, 255, 0.2); }
+
+.group:hover .group-hover\:bg-primary { background-color: var(--color-primary); }
+.group:hover .group-hover\:text-white { color: white; }
+.group:hover .group-hover\:text-primary { color: var(--color-primary); }
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out;
+}
