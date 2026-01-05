@@ -1,4 +1,4 @@
-import { Target, Eye, Heart, Award, Users, Building } from 'lucide-react';
+import { Target, Eye, Heart, Award, Users } from 'lucide-react';
 import { companyInfo, stats, values } from '../data/staticData';
 
 export default function About() {

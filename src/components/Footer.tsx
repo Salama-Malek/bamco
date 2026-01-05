@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Twitter, Instagram } from 'lucide-react';
 import { companyInfo, locations, services, socialLinks } from '../data/staticData';
 
 export default function Footer() {

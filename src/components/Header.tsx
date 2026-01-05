@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Mail, Menu, X } from 'lucide-react';
+import { Phone, Menu, X } from 'lucide-react';
 import { companyInfo } from '../data/staticData';
 
 const navLinks = [
