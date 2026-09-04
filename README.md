@@ -1,113 +1,86 @@
-# BAMCO - بيت التجهيز الطبية
+# BAMCO — Medical Equipment Company Website
 
-موقع إلكتروني احترافي لشركة بيت التجهيز الطبية (BAMCO) - شريكك الموثوق في التجهيزات الطبية.
+Marketing website for BAMCO (Beit Al-Tajheez Al-Tebbeya), a Saudi supplier of medical equipment, supplies, solutions, and devices.
 
-## المميزات
+## Overview
 
-- 🏠 صفحة رئيسية احترافية مع بانر وإحصائيات الشركة
-- 📖 صفحة نبذه عنا (من نحن، رؤيتنا، رسالتنا، قيمنا، شهاداتنا)
-- 🛠️ صفحة الخدمات (التجهيزات، المستلزمات، المحاليل، الأجهزة، خدمة ما بعد البيع)
-- 🛒 متجر إلكتروني مع عرض المنتجات والفئات وسلة التسوق
-- 📞 صفحة التواصل مع نموذج اتصال ومعلومات المكاتب
-- 💬 زر WhatsApp للتواصل السريع
-- 📱 تصميم متجاوب لجميع الأجهزة
-- 🔄 دعم كامل للغة العربية (RTL)
+BAMCO's site presents the company to healthcare sector clients in Saudi Arabia: who they are, what they offer, and how to reach them. It is a fully Arabic, right-to-left, responsive single-page-app built with React and TypeScript, with content sourced from a static data file so copy and listings can be updated without touching component code.
 
-## التقنيات المستخدمة
+## Features
 
-- React 18 + TypeScript
+- Home page with a hero banner and company statistics
+- About page covering company background, vision, mission, values, and certifications
+- Services page detailing equipment, supplies, solutions, devices, and after-sales support
+- Contact page with an EmailJS-powered contact form and office/location details
+- Floating WhatsApp button for quick contact
+- Full right-to-left (RTL) Arabic layout
+- Responsive design across desktop and mobile
+
+## Tech stack
+
+- React 19 + TypeScript
 - Vite
 - Tailwind CSS v4
 - React Router DOM
-- Lucide React (الأيقونات)
+- Lucide React (icons)
+- EmailJS (contact form delivery)
 
-## التثبيت والتشغيل
+## Getting started
 
-### المتطلبات
+### Requirements
+
 - Node.js 18+
-- npm أو yarn أو pnpm
+- npm
 
-### خطوات التثبيت
-
-1. فك ضغط الملفات
-2. افتح Terminal في مجلد المشروع
-3. قم بتثبيت التبعيات:
+### Install and run
 
 ```bash
-npm install
+npm install       # install dependencies
+npm run dev       # start the dev server
+npm run build      # type-check and build for production
+npm run preview    # preview the production build locally
+npm run lint       # run ESLint
 ```
 
-4. لتشغيل المشروع في وضع التطوير:
-
-```bash
-npm run dev
-```
-
-5. لبناء المشروع للإنتاج:
-
-```bash
-npm run build
-```
-
-6. الملفات الجاهزة للنشر ستكون في مجلد `dist`
-
-## هيكل المشروع
+The contact form requires EmailJS credentials, provided via environment variables:
 
 ```
-bamco-frontend/
-├── public/              # الملفات الثابتة
+VITE_EMAILJS_SERVICE_ID=
+VITE_EMAILJS_TEMPLATE_ID=
+VITE_EMAILJS_PUBLIC_KEY=
+```
+
+Production output is written to `dist/` and can be deployed to any static host (Netlify, Vercel, GitHub Pages, or a standard Nginx/Apache server).
+
+## Project structure
+
+```
+bamco/
+├── public/                  # Static assets (logos, favicon)
 ├── src/
-│   ├── components/      # المكونات المشتركة
-│   │   ├── Header.tsx   # شريط التنقل
-│   │   ├── Footer.tsx   # الفوتر
-│   │   └── WhatsAppButton.tsx
-│   ├── pages/           # صفحات الموقع
-│   │   ├── Home.tsx     # الصفحة الرئيسية
-│   │   ├── About.tsx    # نبذه عنا
-│   │   ├── Services.tsx # خدماتنا
-│   │   ├── Store.tsx    # المتجر
-│   │   ├── Cart.tsx     # سلة التسوق
-│   │   └── Contact.tsx  # التواصل
+│   ├── components/
+│   │   ├── Header.tsx       # Navigation bar
+│   │   ├── Footer.tsx
+│   │   ├── WhatsAppButton.tsx
+│   │   ├── PageLoader.tsx
+│   │   └── ScrollToTop.tsx
+│   ├── pages/
+│   │   ├── Home.tsx
+│   │   ├── About.tsx
+│   │   ├── Services.tsx
+│   │   └── Contact.tsx
 │   ├── data/
-│   │   └── staticData.ts # البيانات الثابتة
-│   ├── App.tsx          # المكون الرئيسي
-│   ├── main.tsx         # نقطة الدخول
-│   └── index.css        # الأنماط العامة
+│   │   └── staticData.ts    # Company info, locations, services, stats, values
+│   ├── App.tsx               # Routes and layout
+│   ├── main.tsx               # Entry point
+│   └── index.css
 ├── index.html
 ├── package.json
 ├── tailwind.config.js
-├── postcss.config.js
-├── tsconfig.json
-└── vite.config.ts
+├── vite.config.ts
+└── tsconfig.json
 ```
 
-## تخصيص البيانات
+## License
 
-جميع البيانات الثابتة موجودة في ملف `src/data/staticData.ts`:
-
-- `companyInfo` - معلومات الشركة (الاسم، الهاتف، الإيميل، واتساب)
-- `locations` - مواقع المكاتب والمستودعات
-- `stats` - الإحصائيات
-- `services` - الخدمات
-- `categories` - فئات المنتجات
-- `products` - المنتجات
-- `values` - قيم الشركة
-- `features` - المميزات
-
-## الألوان المستخدمة
-
-- **الأحمر الأساسي**: #D8252F
-- **الأزرق الثانوي**: #2B3B7C
-
-## النشر
-
-بعد بناء المشروع (`npm run build`)، يمكنك رفع محتويات مجلد `dist` إلى أي خادم استضافة ثابتة مثل:
-
-- Netlify
-- Vercel
-- GitHub Pages
-- أي خادم Apache/Nginx
-
-## الترخيص
-
-جميع الحقوق محفوظة © 2024 بيت التجهيز الطبية - BAMCO
+All rights reserved © 2024 BAMCO.
